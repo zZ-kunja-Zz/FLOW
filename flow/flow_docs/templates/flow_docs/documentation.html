@@ -1,0 +1,66 @@
+{% extends "flow_docs/layout.html" %}
+
+{% block body %}
+    <p>
+        Flow is a website built for writing. 
+        Normal writing is slow and inefficient to edit quickly to change this flow is line by line.
+        To add formatting there are commands such as "title" and "endtitle".
+    </p>
+
+    <ul>
+        <li><a href="#title">Titles</a></li>
+        <li><a href="#uni">Unicode Characters</a></li>
+        <li><a href="#paragraph">Paragraphs</a></li>
+    </ul>
+    
+    <h3 id="title">'title' and 'endtitle'</h3>
+    <p>
+        To create a title use the title keyword followed by the title you want followed by endtitle.
+        <code> 
+            <br>
+            title 
+            <br>
+            Example Title 
+            <br>
+            endtitle 
+            <br>
+        </code>
+        Note that title and endtitle must have their own lines.
+    </p>
+
+    <h3 id="uni">Adding Unicode Characters</h3>
+    <p>
+        To add special characters use the HTML 5 syntax: &#YOUR_UNICODE;
+        <code>
+            <br>
+            &#38;#8484;
+            <br>
+            &#8484;    
+            <br>
+        </code>
+    </p>
+
+    <h3 id="paragraph">'paragraph' and 'endparagraph'</h3>
+    <p>
+        To create a parahgraph use the paragraph keyword followed by your paragraph followed by endparagraph.
+        <code>
+            <br>
+            paragraph
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum! Provident similique accusantium nemo autem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+            molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+            numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+            optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+            obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+            nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+            tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+            quia.
+            <br>
+            endparagraph
+            <br>
+        </code>
+    </p>
+{% endblock %}

@@ -1,0 +1,124 @@
+:root {
+    --main: #FCFAF9;
+    --secondary: #333333;
+    --accent: #48E5C2;
+}
+
+* {
+    color: var(--secondary);
+    z-index: 1;
+}
+
+body {
+    padding: 10px;
+}
+
+.mobile {
+    display: none;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column; 
+    width: 25%;
+}
+
+.document-list {
+    border: solid black 1px;
+}
+
+.small-text {
+    width: 15%;
+}
+
+.new-panel {
+    height: 80vh;
+    width: 30vw;
+}
+
+.document-title {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    background-color: var(--main);
+}
+
+#input-textarea {
+    height: 80vh;
+    width: 30vw;
+    resize: none;
+}
+
+#title-logo {
+    display: flex;
+    justify-content: space-between;
+}
+
+#new-output-panel {
+    border: 2px solid var(--accent);
+}
+
+#new-document {
+    display: flex;
+    justify-content: space-around;
+}
+
+#logo {
+    width: 75px;
+    height: 75px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    background-color: rgba(0, 0, 0, .7);
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#save-popup {
+    top: 35vh;
+    left: 35vw;
+    bottom: 35vh;
+    right: 35vw;
+}
+
+#share-popup {
+    top: 35vh;
+    left: 35vw;
+    bottom: 35vh;
+    right: 35vw;
+}
+
+#document-panel-body {
+    border: 2px solid var(--accent);
+    height: 80vh;
+    width: 30vw;
+}
+
+@media only screen and (max-width: 600px) {
+    .computer {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    #document-panel-body {
+        border: 2px solid var(--accent);
+        height: 80vh;
+        width: 80vw;
+    }
+
+}

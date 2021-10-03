@@ -1,0 +1,13 @@
+{% extends "flow_docs/layout.html" %}
+
+{% block title %}Saved{% endblock %}
+
+{% block body %}
+    {% for document in saved_documents %}
+        <div class="document-list">
+            <h3><a href="{% url 'edit' document.id%}">{{document.title}}</a></h3>
+            <h3><a href="{% url 'view' document.id%}">{{document.title}}</a></h3>
+            <h4>{{document.timestamp}}</h4>
+        </div>
+    {% endfor %}
+{% endblock %}

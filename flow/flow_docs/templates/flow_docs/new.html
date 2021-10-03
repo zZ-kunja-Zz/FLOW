@@ -1,0 +1,18 @@
+{% extends "flow_docs/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div id="new-document-div"></div>
+    <div id="overlay"></div>
+    <div class="popup" id="save-popup">
+        <h1>Enter a title to save the document</h1>
+        <input type="text" id="title-input">
+        <button id="submit-title" onclick="closeSave()">Save</button>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'flow_docs/newDocument.js' %}"></script>
+    <script type="text/babel" src="{% static 'flow_docs/inputCompiler.js' %}"></script>
+    <script type="text/javascript" src="{% static 'flow_docs/sourceToHtml.js' %}"></script>
+{% endblock %}

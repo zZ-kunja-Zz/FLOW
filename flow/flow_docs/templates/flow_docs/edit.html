@@ -1,0 +1,38 @@
+{% extends "flow_docs/layout.html" %}
+{% load static %}
+
+
+{% block body %}
+    {% if request.user in editors %}
+        <h1 class="title" id="doc-title" data-id="{{document_id}}">{{title}}</h1>
+
+        <div id="new-document-div"></div>
+        <div id="share-div">
+            <button id="share-button" onclick="showShare()">Share</button>
+        </div>
+        <div id="overlay"></div>
+        <div class="popup" id="share-popup">
+            <h2>Enter the emails of the user you want to share with separated with commas.
+                Example: John@mail.com, Sarah@mail.com, Bryan@mail.com</h2>
+            <input type="radio" name="edit" value="canEdit" id="edit-checkbox">
+            <label for="edit">Can Edit</label><br>
+            <input type="text" id="share-input">
+            <button id="share-button" onclick="closeShare()">Share</button>
+        </div>
+        <div class="popup" id="save-popup">
+            <h1>Leave blank if you don't want to change the title</h1>
+            <input type="text" id="title-input">
+            <button id="submit-title" onclick="closeSave()">Save</button>
+        </div>
+    {% else %}
+        <h2>Error: you do not have permission to edit this document</h2>
+    {% endif %}
+{% endblock %}
+
+{% block script %}
+    {% if request.user in editors %}
+        <script type="text/javascript" src="{% static 'flow_docs/editDocument.js' %}"></script>
+        <script type="text/babel" src="{% static 'flow_docs/inputCompiler.js' %}"></script>
+        <script type="text/javascript" src="{% static 'flow_docs/sourceToHtml.js' %}"></script>
+    {% endif %}
+{% endblock %}
